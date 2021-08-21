@@ -27,5 +27,19 @@ target_sources(${PROJECT_NAME}
         )
 
 message("FTDI params ${LIBFTDI_INCLUDE_DIR} ${LIBFTDI_LIBRARIES}")
-include_directories(${PROJECT_NAME} ${LIBFTDI_INCLUDE_DIR})
+include_directories(${PROJECT_NAME} PUBLIC ${LIBFTDI_INCLUDE_DIR})
 target_link_libraries(${PROJECT_NAME} ${LIBFTDI_LIBRARIES})
+
+set(${PROJECT_NAME}_PUBLIC_HEADERS
+        src/mpsse.h
+        src/support.h
+        )
+
+set_target_properties(${PROJECT_NAME}
+        PROPERTIES
+        C_STANDARD 11
+        C_STANDARD_REQUIRED ON
+        C_EXTENSIONS OFF
+        PUBLIC_HEADER "${${PROJECT_NAME}_PUBLIC_HEADERS}"
+        EXPORT_NAME framework
+        )
