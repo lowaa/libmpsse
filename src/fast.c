@@ -12,8 +12,7 @@
 
 /* Builds a block buffer for the Fast* functions. For internal use only. */
 int fast_build_block_buffer(struct mpsse_context *mpsse, uint8_t cmd,
-                            unsigned char *data, int size, int *buf_size)
-                            {
+                            unsigned char *data, int size, int *buf_size) {
     int i = 0;
     uint16_t rsize = 0;
 
