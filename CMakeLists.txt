@@ -29,7 +29,7 @@ target_sources(${PROJECT_NAME}
 
 message("FTDI params ${LIBFTDI_INCLUDE_DIR} ${LIBFTDI_LIBRARIES}")
 include_directories(${PROJECT_NAME} PUBLIC ${LIBFTDI_INCLUDE_DIR})
-target_link_libraries(${PROJECT_NAME} ${LIBFTDI_LIBRARIES})
+target_link_libraries(${PROJECT_NAME} PUBLIC ${LIBFTDI_LIBRARIES})
 
 set(${PROJECT_NAME}_PUBLIC_HEADERS
         src/mpsse.h
