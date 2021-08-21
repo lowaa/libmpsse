@@ -426,7 +426,8 @@ int SetClock(struct mpsse_context *mpsse, uint32_t freq) {
 
             if (raw_write(mpsse, buf, 3) == MPSSE_OK) {
                 mpsse->clock = div2freq(system_clock, divisor);
-                retval = MPSSE_OK; }
+                retval = MPSSE_OK;
+            }
         }
     }
 
