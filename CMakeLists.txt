@@ -11,8 +11,8 @@ add_library(${PROJECT_NAME} STATIC)
 add_library(${PROJECT_NAME}::framework ALIAS ${PROJECT_NAME})
 
 # Includes ---------------------------------------------------------------------
-#include(GNUInstallDirs)
-#include(CMakePackageConfigHelpers)
+include(GNUInstallDirs)
+include(CMakePackageConfigHelpers)
 
 target_include_directories(${PROJECT_NAME}
         PUBLIC
