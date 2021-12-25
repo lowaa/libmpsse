@@ -33,7 +33,7 @@ target_link_libraries(${PROJECT_NAME} PUBLIC ${LIBFTDI_LIBRARIES})
 
 if (UNIX AND NOT APPLE)
     # special linking for linux
-    target_link_libraries(${TARGET_EXECUTABLE} PRIVATE pthread)
+    target_link_libraries(${PROJECT_NAME} PRIVATE pthread)
 endif()
 
 set(${PROJECT_NAME}_PUBLIC_HEADERS
