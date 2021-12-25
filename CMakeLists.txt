@@ -2,6 +2,14 @@ cmake_minimum_required(VERSION 3.13)
 
 project(libmpsse)
 
+if (UNIX)
+    if (APPLE)
+        add_definitions(-DAPPLE)
+    else()
+        add_definitions(-DLINUX)
+    endif()
+endif()
+
 set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
 find_package(libftdi1 REQUIRED)
 
