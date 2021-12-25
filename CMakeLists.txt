@@ -31,6 +31,11 @@ message("FTDI params ${LIBFTDI_INCLUDE_DIR} ${LIBFTDI_LIBRARIES}")
 include_directories(${PROJECT_NAME} PUBLIC ${LIBFTDI_INCLUDE_DIR})
 target_link_libraries(${PROJECT_NAME} PUBLIC ${LIBFTDI_LIBRARIES})
 
+if (UNIX AND NOT APPLE)
+    # special linking for linux
+    target_link_libraries(${TARGET_EXECUTABLE} PRIVATE pthread)
+endif()
+
 set(${PROJECT_NAME}_PUBLIC_HEADERS
         src/mpsse.h
         src/support.h
