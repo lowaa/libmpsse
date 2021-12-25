@@ -169,9 +169,9 @@ struct mpsse_context *OpenIndex(int vid, int pid, enum modes mode, int freq,
                                 mpsse->open = 1;
 
                                 /* Give the chip a few mS to initialize */
-#ifdef APPLE
+#if defined(APPLE)
                                 usleep(SETUP_DELAY);
-#elifdef LINUX
+#elif defined(LINUX)
                                 nanosleep(SETUP_DELAY * 1000);
 #else
 #error Only mac os or linux platforms supported
