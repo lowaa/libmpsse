@@ -2,13 +2,8 @@ cmake_minimum_required(VERSION 3.13)
 
 project(libmpsse)
 
-if (UNIX)
-    if (APPLE)
-        add_compile_definitions(APPLE)
-    else()
-        add_compile_definitions(LINUX)
-    endif()
-endif()
+# So we can use usleep
+add_compile_definitions(_BSD_SOURCE _DEFAULT_SOURCE)
 
 set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
 find_package(libftdi1 REQUIRED)
