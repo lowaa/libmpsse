@@ -4,9 +4,9 @@ project(libmpsse)
 
 if (UNIX)
     if (APPLE)
-        add_definitions(-DAPPLE)
+        add_compile_definitions(-DAPPLE)
     else()
-        add_definitions(-DLINUX)
+        add_compile_definitions(-DLINUX)
     endif()
 endif()
 
