@@ -10,6 +10,10 @@
 #include "support.h"
 #include <string.h>
 
+#ifndef SWIGPYTHON
+unsigned char fast_rw_buf[SPI_RW_SIZE + CMD_SIZE];
+#endif
+
 /* Builds a block buffer for the Fast* functions. For internal use only. */
 int fast_build_block_buffer(struct mpsse_context *mpsse, uint8_t cmd,
                             unsigned char *data, int size, int *buf_size) {
